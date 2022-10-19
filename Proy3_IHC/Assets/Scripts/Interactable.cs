@@ -14,19 +14,19 @@ public class Interactable : MonoBehaviour
     }
 
     public virtual void Interact(){
-        Debug.Log("Interact");
+        Debug.Log("Interactuando con " + gameObject.name);  
     }
     
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")){
-            Debug.Log("Jugador en rango");
+            Debug.Log("Presiona I para interactuar con " + gameObject.name);
             isInsideZone = true;
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if(other.CompareTag("Player")){
-            Debug.Log("Jugador fuera de rango");
+            Debug.Log("Has salido del rango de interacción de " + gameObject.name);
             isInsideZone = false;
         }
     }

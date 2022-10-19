@@ -14,7 +14,6 @@ public class Pelota : Interactable
 
     public override void Interact(){
         base.Interact();
-        Debug.Log("Pelota interactuando");
-        rb.AddForce(direction*speed, ForceMode.Force);
+        rb.AddForce(transform.up*speed, ForceMode.Impulse);
     }
 }
